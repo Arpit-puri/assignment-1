@@ -3,75 +3,39 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsive
 
 const data = [
 	{
-		name: 'Jan',
-		Expense: 4000,
-		Income: 2400
+		name: 'Week1',
+		User: 500,
+		Guest: 400
 	},
 	{
-		name: 'Feb',
-		Expense: 3000,
-		Income: 1398
+		name: 'Week2',
+		User: 350,
+		Guest: 200
 	},
 	{
-		name: 'Mar',
-		Expense: 2000,
-		Income: 9800
+		name: 'Week3',
+		User: 100,
+		Guest: 450
 	},
 	{
-		name: 'Apr',
-		Expense: 2780,
-		Income: 3908
+		name: 'Week4',
+		User: 180,
+		Guest: 380
 	},
-	{
-		name: 'May',
-		Expense: 1890,
-		Income: 4800
-	},
-	{
-		name: 'Jun',
-		Expense: 2390,
-		Income: 3800
-	},
-	{
-		name: 'July',
-		Expense: 3490,
-		Income: 4300
-	},
-	{
-		name: 'Aug',
-		Expense: 2000,
-		Income: 9800
-	},
-	{
-		name: 'Sep',
-		Expense: 2780,
-		Income: 3908
-	},
-	{
-		name: 'Oct',
-		Expense: 1890,
-		Income: 4800
-	},
-	{
-		name: 'Nov',
-		Expense: 2390,
-		Income: 3800
-	},
-	{
-		name: 'Dec',
-		Expense: 3490,
-		Income: 4300
-	}
+	
 ]
 
 export default function TransactionChart() {
 	return (
-		<div className="h-[22rem] bg-white p-4 rounded-sm border border-gray-200 flex flex-col flex-1">
-			<strong className="text-gray-700 font-medium">Transactions</strong>
+		<div className="h-[22rem] bg-white p-4 rounded-xl shadow-md border flex flex-col flex-1">
+			<strong className="text-black text-lg font-extrabold">Activities</strong>
+			<p className=' font-light ml-2'>May-June</p>
 			<div className="mt-3 w-full flex-1 text-xs">
+				
 				<ResponsiveContainer width="100%" height="100%">
+				
 					<BarChart
-						width={500}
+						width={100}
 						height={300}
 						data={data}
 						margin={{
@@ -81,13 +45,14 @@ export default function TransactionChart() {
 							bottom: 0
 						}}
 					>
+						
 						<CartesianGrid strokeDasharray="3 3 0 0" vertical={false} />
 						<XAxis dataKey="name" />
 						<YAxis />
 						<Tooltip />
 						<Legend />
-						<Bar dataKey="Income" fill="#0ea5e9" />
-						<Bar dataKey="Expense" fill="#ea580c" />
+						<Bar dataKey="Guest" fill="rgb(81, 195, 81)" />
+						<Bar dataKey="User" fill="rgb(203, 77, 77)" />
 					</BarChart>
 				</ResponsiveContainer>
 			</div>
